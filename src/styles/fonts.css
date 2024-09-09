@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Urbanist";
+  src: url("../assets/font/Urbanist-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+@font-face {
+  font-family: "Urbanist-italic";
+  src: url("../assets/font/Urbanist-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  font-style: italic;
+  font-optical-sizing: auto;
+}
