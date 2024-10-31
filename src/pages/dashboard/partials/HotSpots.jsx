@@ -1,3 +1,5 @@
+import React from "react";
+import Masonry from "react-masonry-css"; // Import Masonry
 import nikeArtGallery from "../../../assets/images/landingpage/nike-gallery-2.svg";
 import landMark from "../../../assets/images/landingpage/land-mark-beach.svg";
 import sugarConference from "../../../assets/images/landingpage/sugar-conference.svg";
@@ -11,8 +13,9 @@ import gosiWarmSpring from "../../../assets/images/dashboard/gbosi waterfall.svg
 import arrow from "../../../assets/icons/yellow-right-arrow.svg";
 import see from "../../../assets/icons/white-see.svg";
 import love from "../../../assets/icons/red-love.svg";
+import { NavLink } from "react-router-dom";
 
-
+// Cards array with data
 const cards = [
   {
     id: 1,
@@ -94,49 +97,68 @@ const cards = [
     location: "Ekiti",
     views: "700",
   },
-  // Add more card objects here
+  // Add more card objects here if necessary
 ];
+
+// Breakpoints for masonry columns
+const breakpointColumnsObj = {
+  default: 3, // 3 columns by default
+  1100: 2, // 2 columns for screens smaller than 1100px
+  700: 1, // 1 columns for screens smaller than 700px
+};
 
 const HotSpots = () => {
   return (
-    <div className="p-4 flex flex-col flex-wrap sm:flex-row">
-      {cards.map((card) => (
-        <div
-          key={card.id}
-          className={`relative w-full sm:w-1/2 lg:w-1/3 ${card.height} rounded-lg shadow-lg overflow-hidden`}
-        >
-          <img
-            src={card.image}
-            alt={card.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 w-full bg-black bg-opacity-40 text-white px-4 py-7 opacity-0 transition-opacity hover:opacity-100">
-            <div className="flex flex-col justify-between w-full h-full">
-              <section className="flex justify-between items-start">
-                <div className="flex flex-col justify-start">
-                  <p className="text-[#E6E7E7]">{card.title}</p>
-                  <p><small className="text-[#E6E7E7]">{card.location}</small></p>
-                </div>
-                <div className="flex gap-4 items-center">
-                  <div className="flex gap-1">
-                    <img src={see} alt="number of views icon" width={15} />
-                    <p className="text-[#E6E7E7]">{card.views}</p>
+    <section className="">
+      {/* Masonry layout starts here */}
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="flex w-auto gap-4" // Parent masonry div styling
+        columnClassName="masonry-column space-y-4" // Masonry column styling
+      >
+        {cards.map((card) => (
+          <div
+            key={card.id}
+            className={`relative w-full ${card.height} rounded-lg shadow-lg overflow-hidden`}
+          >
+            <img
+              src={card.image}
+              alt={card.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 w-full bg-black bg-opacity-40 text-white px-4 py-7 opacity-0 transition-opacity hover:opacity-100">
+              <div className="flex flex-col justify-between w-full h-full">
+                <section className="flex justify-between items-start">
+                  <div className="flex flex-col justify-start">
+                    <p className="text-[#E6E7E7]">{card.title}</p>
+                    <p>
+                      <small className="text-[#E6E7E7]">{card.location}</small>
+                    </p>
                   </div>
-                  <img src={love} alt="like icon" width={24} height={24} />
-                </div>
-              </section>
-              <section className="flex items-center justify-between">
-                <button className="m-2 px-4 py-2 primaryBtn">Book</button>
-                <button className="m-2 px-4 py-2 tertiaryBtn">
-                  Chat buddy
-                  <img src={arrow} alt="right arrow" />
-                </button>
-              </section>
+                  <div className="flex gap-4 items-center">
+                    <div className="flex gap-1">
+                      <img src={see} alt="number of views icon" width={15} />
+                      <p className="text-[#E6E7E7]">{card.views}</p>
+                    </div>
+                    <img src={love} alt="like icon" width={24} height={24} />
+                  </div>
+                </section>
+                <section className="flex items-center justify-between">
+                  <button className="m-2 px-4 py-2 primaryBtn">Book</button>
+                  <NavLink to="chatbuddy">
+                  <button className="m-2 px-4 py-2 tertiaryBtn hover:text-mintGreen">
+                    Chat buddy
+                    <img src={arrow} alt="right arrow" />
+                  </button>
+                  </NavLink>
+                </section>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </Masonry>
+      {/* Masonry layout ends here */}
+    </section>
   );
 };
 

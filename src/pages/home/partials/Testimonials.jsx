@@ -38,13 +38,15 @@ const Testimonials = () => {
 
   return (
     <section className="py-20 bg-White mb-40 px-4 sm:px-10 md:px-[60px] lg:px-20">
-      <h2 className="text-center mb-20 text-xl sm:text-2xl lg:text-3xl">
+      <h2 className="text-center mb-20 ">
         Why do they <span>love</span> NomadHaven?
       </h2>
-      <div className="flex flex-col sm:flex-row gap-5 overflow-x-auto no-scrollbar">
+      <div className="flex flex-col sm:flex-row gap-5 overflow-x-auto scrollbar  mx-auto py-6 ">
         {Cards.map((card, index) => (
           <div
-            className="bg-[#E6E7E7] rounded-2xl flex-shrink-0 p-5 w-full sm:w-80 md:w-96 lg:w-1/3"
+            className="bg-[#E6E7E7] rounded-2xl flex-shrink-0 p-5 mx-auto w-62
+            
+            sm:w-80 md:w-96 lg:w-1/3"
             key={index}
           >
             <img src={star} alt="star rating icon" className="w-20 mb-4" />

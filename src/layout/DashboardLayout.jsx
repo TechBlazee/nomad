@@ -8,7 +8,7 @@ const DashboardLayout = () => {
       <SideNav />
       <div className="flex flex-col flex-grow">
         <Navbar />
-        <div className="p-4 flex-grow overflow-auto">
+        <div className=" flex-grow overflow-auto">
           <Outlet />
         </div>
       </div>
