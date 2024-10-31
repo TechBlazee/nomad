@@ -97,7 +97,7 @@ const Signup = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-12 items-center justify-center mx-4 my-12"
+      className="flex flex-col gap-8 items-center justify-center mx-4 my-5"
     >
       <div className="text-center">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold">
@@ -107,12 +107,12 @@ const Signup = () => {
           Create your account to explore the hidden gems
         </p>
       </div>
-      <div className="w-full flex flex-col gap-8 md:gap-10 justify-center items-center">
+      <div className="w-full flex flex-col gap-8 md:gap-5 justify-center items-center ">
         <section className="flex flex-col gap-5 w-full">
-          <div>
+          <div className="">
             <label
               htmlFor="email"
-              className="block mb-2 text-base font-semibold"
+              className="block mb-1 text-base font-medium"
             >
               Email Address
             </label>
@@ -126,10 +126,10 @@ const Signup = () => {
               className="w-full inputFill"
             />
           </div>
-          <div className="mb-4">
+          <div className="">
             <label
               htmlFor="password"
-              className="block mb-2 text-base font-semibold"
+              className="block mb-1 text-base font-medium"
             >
               Password
             </label>
@@ -143,10 +143,10 @@ const Signup = () => {
               className="w-full inputFill"
             />
           </div>
-          <div className="mb-4">
+          <div className="">
             <label
               htmlFor="confirmPassword"
-              className="block mb-2 text-base font-semibold"
+              className="block mb-1 text-base font-medium"
             >
               Confirm Password
             </label>
@@ -161,11 +161,11 @@ const Signup = () => {
             />
           </div>
         </section>
-        <section className="w-full flex flex-col items-center gap-6">
+        <section className="w-full flex flex-col items-center gap-5">
           <button
             id="submit"
             type="submit"
-            className="w-full primaryBtn text-center flex items-center justify-center"
+            className="w-full primaryBtn text-center flex items-center justify-center py-3"
           >
             {isLoading ? (
               <img src={Spinner} alt="Loading..." className="w-5 h-5 mx-auto" />
@@ -176,7 +176,7 @@ const Signup = () => {
 
           <button
             type="button"
-            className="secondaryBtn gap-2 w-full text-center flex items-center justify-center"
+            className="secondaryBtn gap-2 w-full text-center flex items-center justify-center py-3"
             onClick={handleGoogleSignUp}
             disabled={isLoading}
           >
@@ -195,7 +195,7 @@ const Signup = () => {
         <p>
           Have an account already?{" "}
           <span
-            className="text-yellow-500 cursor-pointer font-bold"
+            className="text-yellow-500 cursor-pointer font-bold text-base"
             onClick={() => navigate("/login")} // Navigate to login page
           >
             Log in

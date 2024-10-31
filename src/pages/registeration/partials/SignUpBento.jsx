@@ -3,12 +3,12 @@ import bentoTab from "../../../assets/images/signup-tab.svg";
 
 const SignUpBento = () => {
   return (
-    <section>
-    <div className=" relative w-full max-h-full overflow-hidden hidden lg:block ">
-        <img src={bentoImg} alt="water fall" className="h-full w-full object-contain"/>
+    <section className="h-screen auto mx-auto">
+    <div className=" relative w-full h-full overflow-hidden hidden lg:block ">
+        <img src={bentoImg} alt="water fall" className="h-full w-full object-cover"/>
     </div>
-    <div className="relative w-full mt- lg:hidden ">
-   <img src={bentoTab} alt="water fall"  />
+    <div className="relative w-full lg:hidden ">
+   <img src={bentoTab} alt="water fall"   className="w-full h-full object-cover"/>
  </div>
     </section>
   ); 

@@ -2,6 +2,7 @@ import { useState } from "react";
 import no1 from "../../../assets/icons/no-3.svg";
 import no2 from "../../../assets/icons/no-2.svg";
 import no3 from "../../../assets/icons/no-1.svg";
+
 const Transform = () => {
   const [cards, setCards] = useState([
     {
@@ -29,24 +30,32 @@ const Transform = () => {
       id: 3,
     },
   ]);
+
   return (
-    <div className="mx-auto px-4 sm:px-10  mb-40">
-      <div>
+    <div className="mx-4 sm:mx-8 md:mx-[60px] lg:mx-20 mb-40">
+      <div className=" mx-auto">
         <h2 className="text-center">
           How to <span>transform</span> your Naija trip in seconds?
         </h2>
       </div>
-      <div className="flex flex-row flex-wrap justify-center items-center  gap-12 mt-[60px]">
-        {cards.map((card) => (
+      {/* Grid layout with responsive columns */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-12 mt-16 mx-16">
+        {cards.map((card, index) => (
           <section
-            className="flex flex-col items-center justify-center gap-6 bg-[#E6FBFB] border border-[#E6FBFB] rounded-2xl px-12 py-10 w-full sm:w-[90%] md:w-[45%] lg:w-[30%] "
+            className={`flex flex-col  items-center justify-center bg-[#E6FBFB] border border-[#E6FBFB] rounded-2xl p-6 sm:p-10 w-full h-full ${
+              index === 2
+                ? "sm:col-span-2 sm:w-1/2 sm:mx-auto lg:w-full lg:col-span-1"
+                : ""
+            }`}
             key={card.id}
+            style={{ minHeight: "300px" }}
+            // Ensure cards have equal height
           >
             <div>
-              <img src={card.image} alt={card.alt} width={80} />
+              <img src={card.image} alt={card.alt} width={60} />
             </div>
             <div>
-              <h5>{card.title}</h5>
+              <h5 className="text-center pb-1 pt-5">{card.title}</h5>
             </div>
             <div>
               <p className="text-center">{card.description}</p>

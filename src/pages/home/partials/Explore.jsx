@@ -33,7 +33,7 @@ const Explore = () => {
         <div className=" flex flex-col gap-4 sm:mr-24 md:mr-40 lg:mr-0">
           <div>
             <h1 className="text-White">
-              Explore <span className="text-White"> Naija </span> with
+              Explore <span className="text-White spantag"> Naija </span> with
               NomadHaven
             </h1>
           </div>
@@ -46,7 +46,7 @@ const Explore = () => {
             ))}
           </div>
           <div className="my-12">
-            <button className="primaryBtn" onClick={handleButtonClick}>
+            <button className="primaryBtn  font-semibold py-3" onClick={handleButtonClick}>
               Start exploring now{" "}
               <img src={arrow} alt="arrow icon" width={18} />
             </button>

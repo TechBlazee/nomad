@@ -26,19 +26,16 @@ const App = () => {
       <Routes>
         <Route path="/" element={<RootLayOut />}>
           <Route index element={<Landing />} />
-          <Route path="*" element={<NotFound />} />{" "}
-          {/* Catch-all route for undefined paths */}
+          <Route path="*" element={<NotFound />} /> {/* Catch-all route */}
         </Route>
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="hotspots" element={<HotSpots />} />
           <Route path="chatbuddy" element={<ChatBuddy />} />
-          <Route path="*" element={<NotFound />} />{" "}
+          <Route path="*" element={<NotFound />} /> {/* Catch-all route */}
         </Route>
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="*" element={<NotFound />} />{" "}
-        {/* Another catch-all route outside of layouts */}
       </Routes>
     </BrowserRouter>
   );

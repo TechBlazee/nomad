@@ -56,14 +56,14 @@ const Ask = () => {
       <h2 className="text-center">
         What <span> People </span> Ask
       </h2>
-      <div className="flex flex-col gap-10 mt-16 ">
+      <div className="flex flex-col gap-10 mt-16">
         {cards.map((card) => (
           <div
-            className="border border-[#B0B6B6] p-6 sm:p-8 md:p-10 lg:px-10 lg:py-[42]  rounded-2xl"
+            className="border border-[#B0B6B6] p-4 sm:p-6 md:p-8 lg:px-10 lg:py-4  rounded-2xl"
             key={card.id}
           >
             <div className="flex  justify-between items-center">
-              <h5> {card.question}</h5>
+              <h6> {card.question}</h6>
               <div className="inline-flex">
                 {expandedCardId === card.id ? (
                   <img

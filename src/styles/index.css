@@ -6,19 +6,19 @@
 
 @layer components {
   .primaryBtn {
-    @apply bg-mintGreen border border-mintGreen flex flex-wrap text-Black hover:focus:bg-[#00C5C5] hover:focus:border-[#00C5C5] active:bg-[#00AFAF] active:border-[#00AFAF] disabled:bg-[#B0B6B6] disabled:border-[#B0B6B6] disabled:text-deepGreen py-4 px-5 rounded-lg font-semibold text-lg leading-[21.6px] cursor-pointer;
+    @apply bg-mintGreen border border-mintGreen flex flex-wrap text-Black hover:bg-[#1e9191] hover:border-[#1e9191] active:bg-[#177a63] active:border-[#177a63] disabled:bg-[#B0B6B6] disabled:border-[#B0B6B6] disabled:text-deepGreen py-2 px-4 rounded-lg font-medium text-base leading-[21.6px] cursor-pointer;
   }
 
   .secondaryBtn {
-    @apply bg-transparent border-[1.5px] border-mintGreen flex flex-wrap text-[#004D4D] hover:focus:bg-[#D9FAFA] hover:focus:border-[#D9FAFA] active:bg-[#B0F4F4] active:border-[#B0F4F4] disabled:bg-[#B0B6B6] disabled:border-[#B0B6B6] disabled:text-deepGreen py-4 px-5 rounded-lg font-semibold text-lg leading-[21.6px] cursor-pointer;
+    @apply bg-transparent border-[1.5px] border-mintGreen flex flex-wrap text-[#004D4D] hover:bg-mintGreen hover:border-mintGreen active:bg-[#1e9191] active:border-[#1e9191] disabled:bg-[#B0B6B6] disabled:border-[#B0B6B6] disabled:text-deepGreen py-2 px-4 rounded-lg font-medium text-base leading-[21.6px] cursor-pointer;
   }
 
   .tertiaryBtn {
-    @apply bg-transparent border-none flex flex-wrap text-Yellow hover:focus:bg-[#DDAA56] hover:focus:border-[#DDAA56] hover:focus:active:text-Black active:bg-[#F6BD60] active:border-[#F6BD60] disabled:bg-[#B0B6B6] disabled:border-[#B0B6B6] disabled:text-deepGreen py-4 px-5 rounded-lg font-semibold text-lg leading-[21.6px] cursor-pointer;
+    @apply bg-transparent border-none flex flex-wrap text-Yellow  hover:text-[#177a63] active:text-Black  disabled:bg-[#B0B6B6] disabled:border-[#B0B6B6] disabled:text-deepGreen py-2 px-4 rounded-lg font-semibold leading-[21.6px] cursor-pointer;
   }
 
   .inputFill {
-    @apply bg-LilacWhite border border-deepGreen flex flex-wrap text-deepGreen focus:border-[#0A59F2] valid:border-[#66CC99] invalid:required:border-[#CC522C] disabled:bg-[#B0B6B6] disabled:border-[#B0B6B6] disabled:text-deepGreen py-4 px-5 rounded-lg font-semibold text-lg leading-[21.6px] cursor-pointer;
+    @apply bg-LilacWhite border border-deepGreen flex flex-wrap text-deepGreen focus:border-green-600 valid:border-[#66CC99] disabled:bg-[#B0B6B6] disabled:border-[#B0B6B6] disabled:text-deepGreen py-3 px-5 rounded-lg font-medium text-lg leading-[21.6px] cursor-pointer;
   }
 }
 
@@ -32,20 +32,18 @@
   --nomad-font-style-italic: italic;
 
   /*other root styling*/
-
 }
 
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  place-items: center;
   color: var(--nomad-font-color);
   background-color: var(--nomad-secondary-color);
-  overflow-x: hidden;
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
   font-family: "Urbanist", sans-serif;
   line-height: 1.5rem;
@@ -57,40 +55,73 @@ body {
 
 h1,
 h2,
-h3 {
-  font-weight: 600;
+h3,
+span {
+  font-family: "Manrope", sans-serif;
+}
+
+h1,
+h2,
+h3,
+span {
+  font-weight: 500;
 }
 
 h1 {
-  line-height: 4.2rem;
-  font-size: 3rem;
+  line-height: 2.5rem;
+  font-size: 2rem;
 }
 
 h2 {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+span {
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+.spantag {
+  font-weight: 700;
   font-size: 2rem;
-  line-height: 2.4rem;
+  line-height: 2.5rem;
 }
 
 h3 {
   font-size: 1.5rem;
-  line-height: 1.8rem;
+  line-height: 2rem;
 }
 
 h4 {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  line-height: 1.8rem;
+  line-height: 2rem;
+}
+h5 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+}
+h6 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.625rem;
 }
 
-p,
-li {
-  font-size: 1.1rem;
-  line-height: 2rem;
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 400;
 }
-
-li a {
-  font-weight: 600;
+li {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+small {
+  font-size: 0.9rem;
+  line-height: 1rem;
+  font-weight: 500;
 }
 
 a {
@@ -101,4 +132,197 @@ a {
 
 a:hover {
   color: #535bf2;
+}
+.footer p,
+.footer li,
+.footer small {
+  color: White;
+}
+
+.nav li {
+  font-size: 1.1rem;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+/* Add this to your CSS file or within a <style> tag */
+.progress-green {
+  appearance: none;
+  height: 8px;
+  width: 100%;
+  background-color: #7fedb4; /* Light green background */
+}
+
+.progress-green::-webkit-progress-bar {
+  background-color: #94c8ad; /* Light green background */
+}
+
+.progress-green::-webkit-progress-value {
+  background-color: #10b981; /* Green fill */
+}
+
+.progress-green::-moz-progress-bar {
+  background-color: #10b981; /* Green fill for Firefox */
+}
+
+/* -*tab screen-* */
+@media only screen and (min-width: 768px) {
+  h1 {
+    line-height: 3rem;
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  span {
+    font-weight: 800;
+    font-size: 2.2rem;
+    line-height: 2.5rem;
+  }
+  .spantag {
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    line-height: 2.25rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.2rem;
+  }
+  h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+  }
+  h6 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.65rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+  }
+  li {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+  }
+  small {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    font-weight: 500;
+  }
+
+  a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+  }
+
+  a:hover {
+    color: #535bf2;
+  }
+  .footer p,
+  .footer li,
+  .footer small {
+    color: White;
+  }
+
+  .nav li {
+    font-size: 1.1rem;
+    line-height: 26px;
+    font-weight: 500;
+  }
+}
+
+/* large screen */
+@media only screen and (min-width: 992px) {
+  h1 {
+    line-height: 3.5rem;
+    font-size: 3.75rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  span {
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .spantag {
+    font-weight: 800;
+    font-size: 3.5rem;
+    line-height: 3.75rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+  }
+  h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+  }
+  h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+  }
+  li {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+  }
+  small {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+  }
+
+  a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+  }
+
+  a:hover {
+    color: #535bf2;
+  }
+  .footer p,
+  .footer li,
+  .footer small {
+    color: White;
+  }
+
+  .nav li {
+    font-size: 1.1rem;
+    line-height: 26px;
+    font-weight: 500;
+  }
 }

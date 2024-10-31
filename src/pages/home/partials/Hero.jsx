@@ -1,84 +1,84 @@
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import fiveStar from "../../../assets/icons/fivestar.svg";
 import image1 from "../../../assets/images/landingpage/sugar-conference.svg";
 import image2 from "../../../assets/images/landingpage/nike-gallery-2.svg";
 import image3 from "../../../assets/images/landingpage/land-mark-beach.svg";
 import image4 from "../../../assets/images/landingpage/lekki-reserve.svg";
 import herobg from "../../../assets/images/landingpage/hero-bg.svg";
-
 const Hero = () => {
   const navigate = useNavigate();
-
   const handleButtonClick = () => {
     navigate("/signup");
   };
 
   return (
     <header
-      className="mb-40 bg-cover bg-center"
+      className=" mb-40  bg-cover bg-center"
       style={{ backgroundImage: `url(${herobg})` }}
     >
-      <div className="relative z-10 text-center flex flex-col gap-14 p-4 sm:p-8 md:p-10 lg:p-16 mb-40 pt-32">
-        <section className="flex flex-col md:flex-row justify-between mx-auto items-center gap-8">
-          <div className="flex flex-col items-center mb-6 md:mb-0">
+      <div className="relative z-10 text-center flex flex-col gap-14 p-4 sm:p-8 md:p-10 lg:p-16 mb-10 md:mb-5 pt-10 md:pt-32">
+        <section className="flex justify-between mx-auto items-center gap-8">
+          <div className="flex flex-col items-center ">
             <img src={fiveStar} alt="five star rating" width={100} />
-            <p className="text-sm sm:text-base md:text-lg">
-              “My fun and hangout organizer”
-            </p>
+            <p>“My fun and hangout organizer”</p>
           </div>
-          <div className="flex flex-col items-center mb-6  md:flex md:mb-0">
+          <div className=" flex-col items-center hidden md:flex">
             <img src={fiveStar} alt="five star rating" width={100} />
-            <p className="text-sm sm:text-base md:text-lg">
-              “The perfect map to Naija’s trending spots.”
-            </p>
+            <p>“The perfect map to Naija’s trending spots.”</p>
           </div>
-          <div className="flex flex-col items-center lg:flex lg:mb-0">
+          <div className="flex-col items-center hidden lg:flex  ">
             <img src={fiveStar} alt="five star rating" width={100} />
-            <p className="text-sm sm:text-base md:text-lg">
-              “Cruise, hangout, fun, they have it all.”
-            </p>
+            <p>“Cruise, hangout, fun, they have it all.”</p>
           </div>
         </section>
-        <section>
+        <section className="w-3/4 mx-auto">
           <div className="mb-6">
-            <h1 className="font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+            <h1 className="">
               Transform Every Trip into a
-              <span className="font-bold"> Storybook</span> Adventure
+              <span className="spantag "> Storybook</span> Adventure
             </h1>
           </div>
-          <div>
-            <p className="text-sm sm:text-base md:text-lg">
+          <div className="md:w-3/4 mx-auto">
+            <p>
               Connect with the vibrant cultures and breathtaking landmarks
-              through NomadHaven, your portal to Nigeria’s hidden gems.
+              through NomadHaven, your portal to the Nigeria’s hidden gems.
             </p>
           </div>
         </section>
-        <section>
-          <button className="primaryBtn mx-auto" onClick={handleButtonClick}>
+        <Link to="/login">
+          <button
+            className="primaryBtn mx-auto px-6 py-3 font-semibold "
+            onClick={handleButtonClick}
+          >
             Let&#39;s begin your trip
           </button>
-        </section>
+        </Link>
       </div>
-      <section className="flex flex-wrap justify-center items-center gap-4 px-4">
+      <section className="flex  items-center justify-center gap4 px-4">
         <img
           src={image4}
-          alt="lekki reserve"
-          className="border-4 border-white rounded-2xl rotate-[-4deg] w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+          alt="sugar conference hall"
+          width={300}
+          className="border-8 border-white rounded-2xl origin-top- rotate-[-4deg] w-4/5 sm:w-full  lg:w-1/4 shadow-md"
         />
         <img
           src={image2}
           alt="interior view of nike art gallery"
-          className="border-4 border-white rounded-2xl -rotate-[-4deg] w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+          width={300}
+          className="border-8 border-white rounded-2xl origin-top- -rotate-[-4deg] w-4/5 sm:w-full  lg:w-1/4 shadow-md"
         />
         <img
           src={image3}
           alt="landmark beach"
-          className="border-4 border-white rounded-2xl rotate-[-4deg]  sm:block w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+          width={300}
+          className="border-8 border-white rounded-2xl origin-top- rotate-[-4deg] hidden sm:block w-full lg:w-1/4 shadow-md"
         />
         <img
           src={image1}
           alt="sugar conference hall"
-          className="border-4 border-white rounded-2xl -rotate-[-4deg]  md:block w-full md:w-1/3 lg:w-1/4"
+          width={300}
+          className="border-8 border-white rounded-2xl origin-top- -rotate-[-4deg] hidden md:block w-full  lg:w-1/4 shadow-md "
         />
       </section>
     </header>

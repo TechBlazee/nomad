@@ -59,7 +59,9 @@ const Choose = () => {
   return (
     <div className="px-4 sm:px-10 md:px-[60px] lg:px-20 flex flex-col gap-[60px] py-20 bg-White mb-60">
       <div>
-        <h2 className="text-center">Why choose the NomadHaven?</h2>
+        <h2 className="text-center">
+          Why <span>choose </span>the NomadHaven?
+        </h2>
       </div>
       <div className=" flex flex-wrap justify-center items-start gap-12 sm:gap-6 w-full">
         {cards.map((card) => (

@@ -4,7 +4,6 @@
   font-weight: 100 900;
   font-stretch: 50% 200%;
   font-style: normal;
-  font-optical-sizing: auto;
 }
 
 @font-face {
@@ -14,5 +13,23 @@
   font-weight: 100 900;
   font-stretch: 50% 200%;
   font-style: italic;
+}
+
+@font-face {
+  font-family: "Manrope-italic";
+  src: url("../assets/font/Manrope/Manrope-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  font-style: italic;
   font-optical-sizing: auto;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../assets/font/Manrope/Manrope-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  font-style: normal;
 }

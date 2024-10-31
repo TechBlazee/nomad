@@ -1,4 +1,5 @@
-// src/components/SideNav.jsx
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/icons/NOMADHAVEN teal.svg";
 import menuIcon from "../../../assets/icons/Menu.svg";
 import homeIcon from "../../../assets/icons/Home.svg";
@@ -10,12 +11,9 @@ import supportIcon from "../../../assets/icons/customer-service.svg";
 import communityIcon from "../../../assets/icons/community-group.svg";
 import niphemy from "../../../assets/images/landingpage/niphemi.svg";
 import dropdownIcon from "../../../assets/icons/Dropdown.svg";
-import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const SideNav = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [cards] = useState([
+  const menuItems = [
     {
       img: homeIcon,
       alt: "home icon",
@@ -28,7 +26,7 @@ const SideNav = () => {
       alt: "hotspot icon",
       title: "Hotspots",
       id: 2,
-      path: "hotspots",
+      path: "/dashboard/hotspots",
     },
     {
       img: eventsIcon,
@@ -44,78 +42,66 @@ const SideNav = () => {
       id: 4,
       path: "chatbuddy",
     },
-  ]);
-
-  const toggleNav = () => {
-    setIsOpen(!isOpen);
-  };
+  ];
 
   return (
-    <div className="relative">
-      {/* Logo and Menu Icon for Small Screens */}
-      <section
-        className="sm:hidden flex items-center justify-between px-4 py-2"
-        onClick={toggleNav}
-      >
-        <div className="h-10">
-          <img src={logo} alt="nomadHaven logo" width={190} />
-        </div>
-        <img src={menuIcon} alt="menu icon" className="cursor-pointer" />
-      </section>
-
+    // Wrapper div that hides on small screens and displays on medium and large screens
+    <div className="hidden md:flex md:flex-col md:relative pt-5 ">
       {/* Full SideNav */}
-      <nav
-        className={`flex flex-col gap-10 items-center border-4 px-4 py-9 ${
-          isOpen ? "block" : "hidden"
-        } sm:flex-col sm:gap-10 sm:items-center sm:border-4 sm:px-4 sm:py-9 sm:block`}
-      >
-        <div className="mt-auto h-10 sm:block hidden">
-          <img src={logo} alt="nomadHaven logo" width={200} />
-        </div>
-        <div className="flex flex-col justify-between">
-          <section className="flex flex-col mb-20">
-            <h5 className="mb-4">MANAGE</h5>
-            {cards.map((card) => (
+      <nav className="flex flex-col items-center justify-between pt-5 bg-white min-w-56 max-w-fit h-screen">
+        <NavLink to="/" className=" mb-5 mr-auto pl-5">
+          <img src={logo} alt="nomadHaven logo" width={160} />
+        </NavLink>
+        <div className="flex flex-col gap-10 w-fit ">
+          {/*first section of side nav*/}
+          <section className="flex flex-col mb-5 w-full h-fit">
+            <h6 className="mb-1 text-[#8A9292] font-light text-sm tracking-widest">
+              MANAGE
+            </h6>
+            {menuItems.map((item) => (
               <Link
-                to={card.path}
-                className="flex items-center hover:border-mintGreen hover:bg-mintGreen gap-4 mb-6 px-4 py-2 rounded-lg"
-                key={card.id}
+                to={item.path}
+                className="flex items-center hover:bg-mintGreen gap-2 mb-4 px-4 py-2 rounded-lg transition-colors"
+                key={item.id}
               >
-                <img src={card.img} alt={card.alt} />
-                <p>{card.title}</p>
+                <img src={item.img} alt={item.alt} width={20} />
+                <p>{item.title}</p>
               </Link>
             ))}
           </section>
 
-          <div className="flex flex-col gap-10 mb-auto">
+          <div className="flex flex-col justify-between w-full h-fit">
+            {/*second section of side nav*/}
             <section>
-              <h5 className="mb-4">PREFERENCE</h5>
+              <h6 className="mb-4 text-[#8A9292] font-light text-sm tracking-widest">
+                PREFERENCE
+              </h6>
               <Link
                 to="settings"
-                className="flex items-center hover:border-mintGreen hover:bg-mintGreen gap-4 mb-6 px-4 py-2 rounded-lg"
+                className="flex items-center hover:bg-mintGreen gap-2 mb-4 px-4 py-2 rounded-lg transition-colors"
               >
-                <img src={settingIcon} alt="settings icon" />
+                <img src={settingIcon} alt="settings icon" width={20} />
                 <p>Settings</p>
               </Link>
               <Link
                 to="helpsupport"
-                className="flex items-center hover:border-mintGreen hover:bg-mintGreen gap-4 mb-6 px-4 py-2 rounded-lg"
+                className="flex items-center hover:bg-mintGreen gap-2 mb-4 px-4 py-2 rounded-lg transition-colors"
               >
-                <img src={supportIcon} alt="help & support icon" />
+                <img src={supportIcon} alt="help & support icon" width={20} />
                 <p>Help & Support</p>
               </Link>
               <Link
                 to="community"
-                className="flex items-center hover:border-mintGreen hover:bg-mintGreen gap-4 mb-6 px-4 py-2 rounded-lg"
+                className="flex items-center hover:bg-mintGreen gap-2 mb-4 px-4 py-2 rounded-lg transition-colors"
               >
-                <img src={communityIcon} alt="community icon" />
+                <img src={communityIcon} alt="community icon" width={24} />
                 <p>Community</p>
               </Link>
             </section>
-            <section className="flex items-center gap-4">
-              <img src={niphemy} alt="user profile" />
-              <div className="flex items-center gap-1">
-                <p>niphemy@gmail.com</p>
+            <section className="flex items-center justify-between my-4 gap-2">
+              <img src={niphemy} alt="user profile" width={24} />
+              <div className="flex items-center justify-between">
+                <p className="text-sm">niphemy@gmail.com</p>
                 <img src={dropdownIcon} alt="dropdown icon" width={18} />
               </div>
             </section>

@@ -76,7 +76,7 @@ const Login = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col max-w-full md:max-w-lg gap-8 md:gap-10 items-center justify-center mx-4 my-12"
+      className="flex flex-col gap-8 items-center justify-center mx-4 my-5 w-full lg:mx-24"
     >
       <div className="text-center">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold">
@@ -86,13 +86,10 @@ const Login = () => {
           Log in to keep exploring the hidden gems
         </p>
       </div>
-      <div className="w-full flex flex-col gap-8 md:gap-10 justify-center items-center">
+      <div className="w-full flex flex-col gap-8 md:gap-5 justify-center items-center ">
         <section className="flex flex-col gap-5 w-full">
-          <div>
-            <label
-              htmlFor="email"
-              className="block mb-2 text-base font-semibold"
-            >
+          <div className="">
+            <label htmlFor="email" className="block mb-1 text-base font-medium">
               Email Address
             </label>
             <input
@@ -105,10 +102,10 @@ const Login = () => {
               className="w-full inputFill"
             />
           </div>
-          <div className="mb-4 md:mb-2">
+          <div className="">
             <label
               htmlFor="password"
-              className="block mb-2 text-base font-semibold"
+              className="block mb-1 text-base font-medium"
             >
               Password
             </label>
@@ -123,11 +120,11 @@ const Login = () => {
             />
           </div>
         </section>
-        <section className="w-full flex flex-col items-center gap-6">
+        <section className="w-full flex flex-col items-center gap-5">
           <button
             id="submit"
             type="submit"
-            className="w-full primaryBtn text-center flex items-center justify-center"
+            className="w-full primaryBtn text-center flex items-center justify-center py-3"
           >
             {isLoading ? (
               <img src={Spinner} alt="Loading..." className="w-5 h-5 mx-auto" />
@@ -138,7 +135,7 @@ const Login = () => {
 
           <button
             type="button"
-            className="secondaryBtn gap-2 w-full text-center flex items-center justify-center"
+            className="secondaryBtn gap-2 w-full text-center flex items-center justify-center py-3"
             onClick={handleGoogleSignIn}
             disabled={isLoading}
           >
@@ -147,7 +144,7 @@ const Login = () => {
             ) : (
               <>
                 <img src={google} alt="google icon" className="w-5 h-5" />
-                Log in with Google
+                 Log in with Google
               </>
             )}
           </button>
@@ -155,10 +152,10 @@ const Login = () => {
       </div>
       <section className="text-center">
         <p>
-          Don’t have an account yet?{" "}
+          Don't have an account yet?
           <span
-            className="text-yellow-500 cursor-pointer font-bold"
-            onClick={() => navigate("/signup")} // Navigate to signup page
+            className="text-yellow-500 cursor-pointer font-bold text-base"
+            onClick={() => navigate("/signup")} // Navigate to login page
           >
             Sign up
           </span>
