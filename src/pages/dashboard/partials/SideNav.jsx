@@ -9,8 +9,7 @@ import hotspotIcon from "../../../assets/icons/Location.svg";
 import settingIcon from "../../../assets/icons/settings.svg";
 import supportIcon from "../../../assets/icons/customer-service.svg";
 import communityIcon from "../../../assets/icons/community-group.svg";
-import niphemy from "../../../assets/images/landingpage/niphemi.svg";
-import dropdownIcon from "../../../assets/icons/Dropdown.svg";
+import logout from "../../../assets/icons/logout.svg"
 
 const SideNav = () => {
   const menuItems = [
@@ -97,14 +96,15 @@ const SideNav = () => {
                 <img src={communityIcon} alt="community icon" width={24} />
                 <p>Community</p>
               </Link>
+              <Link
+                to="/"
+                className="flex items-center hover:bg-mintGreen gap-2 mb-4 px-4 py-2 rounded-lg transition-colors"
+              >
+                <img src={logout} alt="community icon" width={20} />
+                <p>Logout</p>
+              </Link>
             </section>
-            <section className="flex items-center justify-between my-4 gap-2">
-              <img src={niphemy} alt="user profile" width={24} />
-              <div className="flex items-center justify-between">
-                <p className="text-sm">niphemy@gmail.com</p>
-                <img src={dropdownIcon} alt="dropdown icon" width={18} />
-              </div>
-            </section>
+           
           </div>
         </div>
       </nav>

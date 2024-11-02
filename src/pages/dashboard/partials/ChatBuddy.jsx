@@ -4,7 +4,7 @@ import ChatWindow from "../DashboardPages/ChatWindow";
 
 const ChatBuddy = () => {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full ">
       <ChatWindow />
     </div>
   );
