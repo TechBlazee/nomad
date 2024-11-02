@@ -52,24 +52,24 @@ const Ask = () => {
     }
   };
   return (
-    <section className="mx-4 sm:mx-8 md:mx-[60px] lg:mx-20 mb-40">
+    <section className="mx-4 sm:mx-8 md:mx-[60px] lg:mx-40 mb-40">
       <h2 className="text-center">
         What <span> People </span> Ask
       </h2>
       <div className="flex flex-col gap-10 mt-16">
         {cards.map((card) => (
           <div
-            className="border border-[#B0B6B6] p-4 sm:p-6 md:p-8 lg:px-10 lg:py-4  rounded-2xl"
+            className="border border-[#B0B6B6] p-4 sm:px-6 md:px-8 lg:px-10 lg:py-4  rounded-2xl"
             key={card.id}
           >
             <div className="flex  justify-between items-center">
-              <h6> {card.question}</h6>
+              <h6 className="font-medium sm:font-semibold"> {card.question}</h6>
               <div className="inline-flex">
                 {expandedCardId === card.id ? (
                   <img
                     src={closeIcon}
                     alt="close icon"
-                    width={40}
+                    width={30}
                     onClick={() => handleToggle(card.id)}
                     className="cursor-pointer"
                   />
@@ -77,7 +77,7 @@ const Ask = () => {
                   <img
                     src={plusIcon}
                     alt="view icon"
-                    width={40}
+                    width={30}
                     onClick={() => handleToggle(card.id)}
                     className="cursor-pointer"
                   />

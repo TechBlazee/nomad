@@ -109,7 +109,7 @@ const breakpointColumnsObj = {
 
 const HotSpots = () => {
   return (
-    <section className="">
+    <section className="bg-gray-100 px-6 py-10">
       {/* Masonry layout starts here */}
       <Masonry
         breakpointCols={breakpointColumnsObj}
