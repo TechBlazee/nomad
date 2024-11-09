@@ -1,6 +1,8 @@
 // subscribe.mjs
 import emailjs from "@emailjs/nodejs";
+import dotenv from "dotenv";
 
+dotenv.config(); // Load environment variables
 
 
 export const sendSubscriptionEmail = async (email) => {
