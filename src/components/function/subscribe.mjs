@@ -1,8 +1,5 @@
 // subscribe.mjs
 import emailjs from "@emailjs/nodejs";
-import dotenv from "dotenv";
-
-dotenv.config(); // Load environment variables
 
 
 export const sendSubscriptionEmail = async (email) => {
@@ -13,13 +10,13 @@ export const sendSubscriptionEmail = async (email) => {
   };
 
   try {
-    const response = await emailjs.send(
-      process.env.SERVICE_ID,
-       process.env.TEMPLATE_ID,
+      const response = await emailjs.send(
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID,
       emailData,
       {
-        publicKey: process.env.publicKey,
-        privateKey: process.env.privateKey, // optional, highly recommended for security reasons
+        publicKey: import.meta.env.VITE_publicKey,
+        privateKey: import.meta.env.VITE_privateKey, // optional
       }
     );
 
