@@ -1,6 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getDatabase } from "firebase/database";
+import dotenv from "dotenv";
+
+dotenv.config(); // Load environment variables
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
