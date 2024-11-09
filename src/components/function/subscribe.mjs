@@ -12,12 +12,12 @@ export const sendSubscriptionEmail = async (email) => {
 
   try {
     const response = await emailjs.send(
-      "service_bdd86uu",
-      "template_ldbfi8k",
+      process.env.SERVICE_ID,
+       process.env.TEMPLATE_ID,
       emailData,
       {
-        publicKey: "uqa0JEUP6Yaxx_xcG",
-        privateKey: "Vs1tsLJUqDIUI0DB-6xeO", // optional, highly recommended for security reasons
+        publicKey: process.env.publicKey,
+        privateKey: process.env.privateKey, // optional, highly recommended for security reasons
       }
     );
 
