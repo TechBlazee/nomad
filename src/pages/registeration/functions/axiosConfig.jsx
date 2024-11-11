@@ -4,8 +4,7 @@ import { getAuth } from "firebase/auth";
 // Axios instance
 const axiosInstance = axios.create({
   baseURL:
-    "https://registrationnomad-default-rtdb.firebaseio.com" ||
-    "http://localhost:5173",
+    "https://registrationnomad-default-rtdb.firebaseio.com/",
   headers: {
     "Content-Type": "application/json",
   },
